@@ -1,2 +1,15 @@
+# Les robots qui fabriquent l'aperçu d'un lien partagé peuvent lire la page.
+User-agent: facebookexternalhit
+User-agent: Facebot
+User-agent: LinkedInBot
+User-agent: Twitterbot
+User-agent: Discordbot
+User-agent: Slackbot
+User-agent: Slackbot-LinkExpanding
+User-agent: WhatsApp
+User-agent: TelegramBot
+Allow: /
+
+# Tous les autres robots (moteurs de recherche, agents IA) restent interdits.
 User-agent: *
 Disallow: /
