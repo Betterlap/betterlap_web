@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<title>BetterLap, l'ingénieur de course de ton simulateur</title>
+<meta name="description" content="BetterLap lit ta télémétrie à chaque tour, repère ce qui te coûte du temps et écrit le réglage qui le corrige.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='24 -11 160 160'%3E%3Cpath fill='%23fff' d='M65.28319 17 L150.0531 17 L181.04425 47.5354 L162.81416 66.44912 L181.04425 84.90708 L140.93805 120 L88.0708 120 L147.77434 66.44912 L129.54425 47.5354 L93.08407 47.5354 Z'/%3E%3Cpath fill='%235139FE' d='M27 120 L61.63717 120 L109.0354 77.15929 L70.75221 77.15929 Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&amp;family=Saira:wdth,wght@87.5,700&amp;display=swap">
+<style>
+/* Valeurs du thème BetterLap v6 */
+:root {
+  color-scheme: dark;
+  --radius: 5px;
+  --background: #000000;
+  --foreground: #F5F5F6;
+  --muted-foreground: #989898;
+  --primary: #5239FE;
+  --primary-foreground: #FFFFFF;
+  --input: rgb(255 255 255 / 10%);
+  --halo: rgb(16 18 48 / 60%);
+  --success: #97CC04;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Saira", ui-sans-serif, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background-color: var(--background);
+  /* Halo de fond : démarre au bord haut et s'éteint aux bords gauche et droit */
+  background-image: radial-gradient(ellipse 66.67% 360px at 50% 0, var(--halo), transparent 75%);
+  background-repeat: no-repeat;
+  color: var(--foreground);
+  font: 400 14px/24px var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+main {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 64px 24px; text-align: center;
+}
+.logo { width: min(320px, 70vw); height: auto; display: block; }
+.badge {
+  display: inline-flex; align-items: center; gap: 6px; height: 20px; margin-top: 48px; padding: 0 8px;
+  border: 1px solid var(--input); border-radius: 999px;
+  font-size: 12px; line-height: 1; font-weight: 500; white-space: nowrap;
+}
+.badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+h1 {
+  margin: 24px 0 0; max-width: 960px;
+  font-family: var(--font-heading); font-weight: 700; font-stretch: 87.5%; font-variation-settings: "wdth" 87.5;
+  font-size: clamp(40px, 8vw, 88px); line-height: .9; text-transform: uppercase;
+}
+.lead { max-width: 580px; margin: 24px 0 0; font-size: 18px; line-height: 28px; color: var(--muted-foreground); text-wrap: pretty; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 40px; margin-top: 32px; padding: 0 20px; border-radius: 4px;
+  background: var(--primary); color: var(--primary-foreground);
+  font: 500 14px/20px var(--font-sans); text-decoration: none; white-space: nowrap;
+  transition: background-color .15s;
+}
+.btn:hover { background: rgb(82 57 254 / 90%); }
+.btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.btn svg { width: 16px; height: 16px; }
+.games { margin: 16px 0 0; font-size: 12px; line-height: 20px; color: var(--muted-foreground); }
+footer { padding: 24px; text-align: center; font-size: 12px; line-height: 20px; color: var(--muted-foreground); }
+</style>
+</head>
+<body>
